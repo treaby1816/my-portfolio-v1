@@ -10,6 +10,15 @@ import {
   Github
 } from 'lucide-react';
 
+// --- IMPORT YOUR IMAGES HERE ---
+// Make sure these filenames match EXACTLY what is in your src/assets folder!
+import serviceMattersImg from '../assets/service-matters-shot.jpg';
+import treabynImg from '../assets/treabyn-mall-shot.jpg';
+import aiOnboardingImg from '../assets/ai-onboarding-shot.jpg';
+import medicalTriageImg from '../assets/medical-triage-shot.jpg';
+import rccgImg from '../assets/church-db-shot.jpg';
+import orderNotifierImg from '../assets/order-notifier-shot.jpg';
+
 const Projects = () => {
   const projects = [
     {
@@ -18,8 +27,8 @@ const Projects = () => {
       description: "A comprehensive digital transformation of the Service Matters Department for the Ondo State Civil Service, replacing manual bureaucracy with automated registry logic.",
       tech: ["AppSheet", "Process Automation"],
       icon: <ShieldCheck className="w-5 h-5 text-[#38bdf8]" />,
-      image: "/src/assets/service-matters-shot.jpg",
-      // VERIFIED LIVE
+      // Using the imported variable
+      image: serviceMattersImg,
       github: "https://github.com/treaby1816/ServiceMatters" 
     },
     {
@@ -28,8 +37,7 @@ const Projects = () => {
       description: "A high-performance headless e-commerce store built using Google Sheets as a real-time backend to manage inventory and real-time orders.",
       tech: ["React", "Google Sheets API"],
       icon: <ShoppingCart className="w-5 h-5 text-green-400" />,
-      image: "/src/assets/treabyn-mall-shot.jpg",
-      // VERIFIED LIVE
+      image: treabynImg,
       github: "https://github.com/treaby1816/treabyn-global-mall"
     },
     {
@@ -38,8 +46,7 @@ const Projects = () => {
       description: "An n8n-powered intelligent intake engine built to automate lead scoring, folder provisioning, and client communication.",
       tech: ["n8n", "AI Logic"],
       icon: <Cpu className="w-5 h-5 text-purple-400" />,
-      image: "/src/assets/ai-onboarding-shot.jpg",
-      // VERIFIED LIVE
+      image: aiOnboardingImg,
       github: "https://github.com/treaby1816/ai-client-onboarding"
     },
     {
@@ -48,8 +55,7 @@ const Projects = () => {
       description: "An automated patient intake system that uses AI logic to prioritize medical cases based on symptom severity and data inputs.",
       tech: ["n8n", "Conditional Logic"],
       icon: <HeartPulse className="w-5 h-5 text-red-400" />,
-      image: "/src/assets/medical-triage-shot.jpg",
-      // VERIFIED LIVE
+      image: medicalTriageImg,
       github: "https://github.com/treaby1816/medical-triage-agent"
     },
     {
@@ -58,8 +64,7 @@ const Projects = () => {
       description: "Designing a centralized digital member database for RCCG Jesus House to streamline record-keeping and member identification.",
       tech: ["SQL", "Database Design"],
       icon: <Users className="w-5 h-5 text-blue-400" />,
-      image: "/src/assets/church-db-shot.jpg",
-      // VERIFIED LIVE
+      image: rccgImg,
       github: "https://github.com/treaby1816/rccg-member-db"
     },
     {
@@ -68,8 +73,7 @@ const Projects = () => {
       description: "An intelligent notification engine that uses an AI brain to classify and route high-priority orders directly to Telegram and SMS for instant fulfillment.",
       tech: ["n8n", "Twilio API"],
       icon: <MessageSquare className="w-5 h-5 text-yellow-400" />,
-      image: "/src/assets/order-notifier-shot.jpg",
-      // VERIFIED LIVE
+      image: orderNotifierImg,
       github: "https://github.com/treaby1816/ai-order-notifier"
     }
   ];
@@ -107,9 +111,9 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={`${project.title} Screenshot`} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-transparent to-transparent" />
                 
                 {/* ACTIVE GITHUB LINK OVERLAY */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -117,7 +121,7 @@ const Projects = () => {
                      href={project.github}
                      target="_blank"
                      rel="noopener noreferrer"
-                     className="px-5 py-2 bg-[#38bdf8] text-slate-900 rounded-full font-bold flex items-center gap-2 scale-90 hover:scale-105 transition-transform cursor-pointer"
+                     className="px-5 py-2 bg-[#38bdf8] text-slate-900 rounded-full font-bold flex items-center gap-2 scale-90 hover:scale-105 transition-transform cursor-pointer shadow-lg shadow-[#38bdf8]/20"
                    >
                       <Github size={18} /> View Blueprint
                    </a>
